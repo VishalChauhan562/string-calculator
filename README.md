@@ -1,0 +1,2 @@
+## To test
+pytest tests/
