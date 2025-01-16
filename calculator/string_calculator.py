@@ -3,8 +3,13 @@ def add(numbers: str) -> int:
     if numbers == "":
         return 0
     if numbers.startswith("//"):
-        delimiter = numbers[2]
-        numbers = numbers[4:]  
+        if numbers[2] == "[":
+            closing_bracket = numbers.find("]")
+            delimiter = numbers[3:closing_bracket]
+            numbers = numbers[closing_bracket + 2:] 
+        else:
+            delimiter = numbers[2]
+            numbers = numbers[4:] 
         numbers = numbers.replace(delimiter, ",")
 
     numbers = numbers.replace("\n",",")
