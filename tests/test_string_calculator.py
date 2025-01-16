@@ -29,3 +29,7 @@ def test_negative_numbers_throw_exception():
     with pytest.raises(ValueError) as exc:
         add("1,-2,3,-4")
     assert str(exc.value) == "negatives not allowed: -2, -4"
+
+
+def test_numbers_bigger_than_1000_are_ignored():
+    assert add("2,1001") == 2    
