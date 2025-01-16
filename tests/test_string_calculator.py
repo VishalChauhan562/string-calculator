@@ -5,5 +5,8 @@ def test_empty_string_returns_zero():
 
 
 def test_single_number_returns_that_number():
-    from calculator.string_calculator import add
     assert add("1") == 1
+
+
+def test_two_numbers_returns_their_sum():
+    assert add("1,2") == 3
